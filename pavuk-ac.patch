@@ -1,0 +1,194 @@
+diff -ur pavuk-0.9pl29d.orig/configure.in pavuk-0.9pl29d/configure.in
+--- pavuk-0.9pl29d.orig/configure.in	Sun Sep 30 16:03:14 2001
++++ pavuk-0.9pl29d/configure.in	Sat Nov  2 23:33:33 2002
+@@ -1001,45 +1001,46 @@
+ have_db185_h="no"
+ AC_CHECK_HEADER(db1/db.h, [
+ 	AC_DEFINE_UNQUOTED(HAVE_DB1_H, 1, [have db1/db.h])
+-	have_db_h="yes"],[
++	have_db_h="yes"], [
+ 	AC_MSG_CHECKING([for txn_begin in db.h])
+-	AC_EGREP_HEADER(txn_begin, db.h, [
++	AC_EGREP_HEADER(txn_begin, [db.h], [
+ 		have_DB_VERSION_STRING="yes"
+ 		AC_MSG_RESULT($have_DB_VERSION_STRING)
+ 		AC_CHECK_HEADER(db_185.h, [
+ 			AC_DEFINE_UNQUOTED(HAVE_DB185_H, 1, [have db185.h])
+-			have_db185_h="yes"],
++			have_db185_h="yes"], [
+ 			AC_CHECK_HEADER(db3/db_185.h, [
+ 				AC_DEFINE_UNQUOTED(HAVE_DB3_DB185_H, 1,
+ 					[have db3/db185.h])
+-				have_db185_h="yes"],
++				have_db185_h="yes"], [
+ 				AC_CHECK_HEADER(db2/db_185.h, [
+ 					AC_DEFINE_UNQUOTED(HAVE_DB2_DB185_H, 1,
+ 						[have db2/db185.h])
+-					have_db185_h="yes"]
+-				)
+-			)
+-		)], [
++					have_db185_h="yes"
++				])
++			])
++		])], [
+ 		have_db_h="yes";
+ 		have_DB_VERSION_STRING="no";
+-		AC_MSG_RESULT($have_DB_VERSION_STRING)]
+-	)]
+-)
++		AC_MSG_RESULT($have_DB_VERSION_STRING)
++	])
++])
+ 
+ if test $have_db_h = "yes"; then
+ 	AC_CHECK_FUNC(dbopen,
+-		AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1, [Berkeley DB 1.8x]),
+-		AC_CHECK_LIB(db1, dbopen, [
++		[AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1, [Berkeley DB 1.8x])], [
++		AC_CHECK_LIB(db1, [dbopen], [
+ 			AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1, [Berkeley DB 1.8x])
+-			x_libs="$x_libs -ldb1"],
+-			AC_CHECK_LIB(db, dbopen,
+-				AC_CHECK_LIB(db, txn_begin, , [
++			x_libs="$x_libs -ldb1"], [
++			AC_CHECK_LIB(db, [dbopen], [
++				AC_CHECK_LIB(db, [txn_begin], , [
+ 					AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1,
+ 						[Berkeley DB 1.8x])
+-					x_libs="$x_libs -ldb"])
+-			)
+-		)
+-	)
++					x_libs="$x_libs -ldb"
++				])
++			])
++		])
++	])
+ fi
+ 
+ if test $have_db185_h = "yes"; then
+@@ -1048,33 +1049,38 @@
+ 		[Berkeley DB 1.8x comatibility])
+ 	AC_CHECK_FUNC(__db185_open, [
+ 		AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1, [Berkeley DB 1.8x])
+-		found_db_lib="yes"])
++		found_db_lib="yes"
++	])
+ 	if test $found_db_lib = "no"; then
+-		AC_CHECK_LIB(db-3.1, __db185_open, [
++		AC_CHECK_LIB(db-3.1, [__db185_open], [
+ 			AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1, [Berkeley DB 1.8x])
+ 			x_libs="$x_libs -ldb-3.1"
+-			found_db_lib="yes"])
++			found_db_lib="yes"
++		])
+ 	fi
+ 	if test $found_db_lib = "no"; then
+-		AC_CHECK_LIB(db-3.0, __db185_open, [
++		AC_CHECK_LIB(db-3.0, [__db185_open], [
+ 			AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1, [Berkeley DB 1.8x])
+ 			x_libs="$x_libs -ldb-3.1"
+-			found_db_lib="yes"])
++			found_db_lib="yes"
++		])
+ 	fi
+ 	if test $found_db_lib = "no"; then
+-		AC_CHECK_LIB(db2, dbopen, [
++		AC_CHECK_LIB(db2, [dbopen], [
+ 			AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1, [Berkeley DB 1.8x])
+ 			x_libs="$x_libs -ldb2"
+-			found_db_lib="yes"])
++			found_db_lib="yes"
++		])
+ 	fi
+ 	if test $found_db_lib = "no"; then
+-		AC_CHECK_LIB(db, __db185_open,
+-			AC_CHECK_LIB(db, txn_open, , [
++		AC_CHECK_LIB(db, [__db185_open], [
++			AC_CHECK_LIB(db, [txn_open], , [
+ 				AC_DEFINE_UNQUOTED(HAVE_BDB_18x, 1,
+ 					[Berkeley DB 1.8x])
+ 				x_libs="$x_libs -ldb"
+-				found_db_lib="yes"])
+-		)
++				found_db_lib="yes"
++			])
++		])
+ 	fi
+ fi
+ 
+@@ -1084,7 +1090,7 @@
+ 
+ AC_ARG_ENABLE(ipv6,
+ 	[  --disable-ipv6             do not compile with IPv6 support],
+-	WITH_IPV6=$enableval, WITH_IPV6="yes")
++	[WITH_IPV6=$enableval], [WITH_IPV6="yes"])
+ 
+ if test "$WITH_IPV6" = yes; then
+ 	have_ipv6_func="no"
+@@ -1092,7 +1098,7 @@
+ 	AC_CHECK_FUNCS(inet_ntop,
+ 	AC_CHECK_FUNCS(getaddrinfo,
+ 	AC_CHECK_FUNCS(freeaddrinfo,
+-	AC_CHECK_FUNCS(gai_strerror, have_ipv6_func="yes")))))
++	AC_CHECK_FUNCS(gai_strerror, [have_ipv6_func="yes"])))))
+ 
+ 	if test $have_ipv6_func = "no"; then
+ 		if test -d /usr/inet6/include; then
+@@ -1102,7 +1108,7 @@
+ 			LDFLAGS="$LDFLAGS -I/usr/inet6/lib"
+ 		fi
+ 		AC_CHECK_LIB(inet6, getaddrinfo,
+-			have_ipv6_func="yes"; IPV6_LIBS="-linet6")
++			[have_ipv6_func="yes"; IPV6_LIBS="-linet6"])
+ 	fi
+ 
+ 	AC_MSG_CHECKING([for IPv6 support])
+@@ -1117,7 +1123,7 @@
+ 				sa6.sin6_addr.s6_addr;
+ 				sa6.sin6_family = AF_INET6;
+ 				return sizeof(a6);
+-		], have_ipv6_support="yes", have_ipv6_func="no")
++		], [have_ipv6_support="yes"], [have_ipv6_func="no"])
+ 	fi
+ 	AC_MSG_RESULT($have_ipv6_support)
+ 
+@@ -1134,7 +1140,8 @@
+ 	], [struct sockaddr_storage ss; return sizeof(ss);], [
+ 	AC_DEFINE_UNQUOTED(HAVE_SOCKADDR_STORAGE, 1,
+ 		[have declared struct sockaddr_storage])
+-	have_sockaddr_storage="yes"])
++	have_sockaddr_storage="yes"
++])
+ AC_MSG_RESULT($have_sockaddr_storage)
+ 
+ dnl *******************************
+@@ -1147,14 +1154,15 @@
+ ac_tm_gmtoff="no"
+ AC_TRY_COMPILE([#include <time.h>], [struct tm mtm; mtm.tm_gmtoff; return 0;], [
+ 	AC_DEFINE_UNQUOTED(HAVE_GMTOFF, 1, [have tm_gmtoff inside struct tm])
+-	ac_tm_gmtoff="yes"])
++	ac_tm_gmtoff="yes"
++])
+ AC_MSG_RESULT($ac_tm_gmtoff)
+ 
+ AC_FUNC_FNMATCH
+ AC_CHECK_FUNCS(setenv usleep mkstemp vsnprintf)
+ AC_CHECK_FUNCS(fstatvfs, , [AC_CHECK_FUNCS(fstatfs)])
+-AC_CHECK_FUNC(lstat, , x_cflags="$x_cflags -Dlstat=stat")
+-AC_CHECK_FUNC(flock, ac_flock="yes", ac_flock="no")
++AC_CHECK_FUNC(lstat, , [x_cflags="$x_cflags -Dlstat=stat"])
++AC_CHECK_FUNC(flock, [ac_flock="yes"], [ac_flock="no"])
+ 
+ if eval "test x$ac_flock = xyes"; then
+ 	AC_DEFINE_UNQUOTED(HAVE_FLOCK, 1, [have flock() in libc])
+@@ -1167,7 +1175,7 @@
+ 	fcntl(0,F_SETLK,F_WRLCK);
+ 	fcntl(0,F_SETLK,F_UNLCK);
+ ],
+-	ac_fcntl_lock="yes")
++	[ac_fcntl_lock="yes"])
+ 	AC_MSG_RESULT($ac_fcntl_lock)
+ 	if eval "test x$ac_fcntl_lock = xyes"; then
+ 		AC_DEFINE_UNQUOTED(HAVE_FCNTL_LOCK, 1, [fcntl() file locking])
