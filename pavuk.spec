@@ -23,7 +23,7 @@ BuildRequires:	db1-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.6a
+BuildRequires:	openssl-devel >= 0.9.6m
 Obsoletes:	pavuk-ssl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
