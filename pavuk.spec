@@ -1,15 +1,25 @@
 Summary:	Pavuk WWW Graber
 Summary(pl):	Narzêdzie do nieinteraktywnego ¶ci±gania stron WWW
 Name:		pavuk
-Version:	0.9pl27
+Version:	0.9pl29d
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
-Group(de):	Netzwerkwesen/Werkzeuge
+Group(cs):	Sí»ové/Utility
+Group(da):	Netværks/Værktøj
+Group(de):	Netzwerkwesen/Dienstprogramme
 Group(es):	Red/Utilitarios
+Group(fr):	Réseau/Utilitaires
+Group(is):	Net/Tól
+Group(it):	Rete/Utility
+Group(no):	Nettverks/Verktøy
 Group(pl):	Sieciowe/Narzêdzia
 Group(pt_BR):	Rede/Utilitários
+Group(pt):	Rede/Utilidades
+Group(ru):	óÅÔÅ×ÙÅ/ğÒÉÌÏÖÅÎÉÑ
+Group(sl):	Omre¾ni/Pripomoèki
+Group(sv):	Nätverk/Verktyg
 Source0:	http://www.idata.sk/~ondrej/sw/%{name}-%{version}.tgz
 Source1:	%{name}.png
 Patch0:		%{name}-fixes.patch
