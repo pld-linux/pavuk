@@ -18,5 +18,6 @@ diff -ur pavuk-0.9pl29d.orig/pavuk.desktop pavuk-0.9pl29d/pavuk.desktop
  Exec=pavuk -X
  Icon=pavuk.png
  Terminal=0
- Type=Internet
+-Type=Internet
++Type=Application
 +# vi: encoding=utf-8
