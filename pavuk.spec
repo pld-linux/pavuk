@@ -58,9 +58,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz pavukrc.sample pavuk_authinfo.sample Pavuk
 %attr(755,root,root) %{_bindir}/pavuk
 %{_mandir}/man1/*
-
-%changelog
-* Sun May  9 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.9pl12-1]
-- now package is FHS 2.0 compliant,
-- rewrited from spec obtained from RH contrib.
