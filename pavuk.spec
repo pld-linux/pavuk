@@ -1,6 +1,3 @@
-# TODO:
-# - SECURITY: http://securitytracker.com/alerts/2004/Jul/1010789.html
-# - SECURITY: http://securitytracker.com/alerts/2004/Jun/1010613.html
 Summary:	Pavuk WWW Graber
 Summary(cs):	Program pro zrcadlení HTTP, FTP a Gopher serverù
 Summary(fr):	Un programme de mirroring pour HTTP, FTP ou les serveurs Gopher
@@ -9,7 +6,7 @@ Summary(pl):	Narzêdzie do nieinteraktywnego ¶ci±gania stron WWW
 Summary(sk):	Program na zrkadlenie HTTP, FTP a Gopher serverov
 Name:		pavuk
 Version:	0.9pl29d
-Release:	5
+Release:	5.1
 Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
@@ -19,6 +16,8 @@ Source1:	%{name}.png
 Patch0:		%{name}-fixes.patch
 Patch1:		%{name}-ac.patch
 Patch2:		%{name}-desktop.patch
+Patch3:		%{name}-http.patch
+Patch4:		%{name}-digest_auth.c.patch
 Icon:		pavuk.xpm
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	automake
@@ -62,6 +61,9 @@ HTTP, FTP, Gopher alebo HTTPS (SSL).
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+cd src
+%patch3 -p0
+%patch4 -p0
 cp %{SOURCE1} .
 
 %build
