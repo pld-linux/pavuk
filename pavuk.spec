@@ -6,7 +6,7 @@ Summary(pl):	Narzêdzie do nieinteraktywnego ¶ci±gania stron WWW
 Summary(sk):	Program na zrkadlenie HTTP, FTP a Gopher serverov
 Name:		pavuk
 Version:	0.9pl29d
-Release:	2
+Release:	3
 Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
