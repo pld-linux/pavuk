@@ -52,5 +52,5 @@ rm -rf $RPM_BUILD_ROOT
 %changelog
 * Sun May  9 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [0.9pl12-1]
-- now package is FHS 2.0 compiliat. rewrited from spec obtained from RH
-  contrib.
+- now package is FHS 2.0 compliat
+- rewrited from spec obtained from RH contrib.
