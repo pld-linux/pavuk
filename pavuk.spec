@@ -41,7 +41,7 @@ cp %{SOURCE1} .
 %build
 rm missing
 %{__libtoolize}
-gettextize --copy --force
+%{__gettextize}
 aclocal
 %{__autoconf}
 %{__automake}
