@@ -40,7 +40,7 @@ make prefix=$RPM_BUILD_ROOT%{_prefix} install
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	AUTHORS ChangeLog NEWS README TODO THANK_TO
 
-%_finf_lang pavuk
+%finf_lang pavuk
 
 %clean
 rm -rf $RPM_BUILD_ROOT
