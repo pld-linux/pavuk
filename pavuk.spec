@@ -1,17 +1,17 @@
 Summary:	Pavuk WWW Graber
 Summary(pl):	Narzedzie do nieinteraktywnego ¶ci±gania stron WWW.
 Name:		pavuk
-Version:	0.9pl23
-Release:	2
+Version:	0.9pl24
+Release:	1
 Serial:		1
-Copyright:	GPL
+License:	GPL
 Group:		Networking/Utilities
 Group(pl):      Sieciowe/Narzêdzia
 Source:		ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
 Patch:		pavuk-DESTDIR.patch
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	gtk+-devel
-BuildRequires: 	XFree86-devel
+BuildRequires:	XFree86-devel
 BuildRequires:	gettext-devel
 BuildRequires:	automake
 BuildRequires:	openssl-devel >= 0.9.4-2
@@ -27,8 +27,8 @@ Pavuk is UNIX program used to mirror contents of WWW documents or files. It
 transfers documents from HTTP, FTP and Gopher servers.
 
 %description -l pl
-Pavuk (Paj±k) jest programem do robienia odbiæ lustrzanych (mirror) stron WWW.
-Mo¿e pracowaæ z protoko³ami HTTP, FTP i Gopher.
+Pavuk (Paj±k) jest programem do robienia odbiæ lustrzanych (mirror) stron
+WWW. Mo¿e pracowaæ z protoko³ami HTTP, FTP i Gopher.
 
 %prep
 %setup -q
