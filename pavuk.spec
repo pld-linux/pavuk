@@ -11,7 +11,6 @@ Source:		ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
 Patch:		pavuk-DESTDIR.patch
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	gtk+-devel
-BuildRequires:	XFree86-devel
 BuildRequires:	gettext-devel
 BuildRequires:	automake
 BuildRequires:	openssl-devel >= 0.9.4-2
