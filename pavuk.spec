@@ -44,7 +44,7 @@ libtoolize --copy --force
 gettextize --copy --force
 aclocal
 autoconf
-automake -a -c
+automake -a -c -f
 %configure \
 	--enable-ssl \
 	--enable-threads \
