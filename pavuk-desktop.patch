@@ -1,7 +1,7 @@
 diff -ur pavuk-0.9pl29d.orig/pavuk.desktop pavuk-0.9pl29d/pavuk.desktop
 --- pavuk-0.9pl29d.orig/pavuk.desktop	Sat Nov  2 22:30:28 2002
 +++ pavuk-0.9pl29d/pavuk.desktop	Sat Nov  2 23:55:58 2002
-@@ -1,11 +1,14 @@
+@@ -1,11 +1,15 @@
  [Desktop Entry]
  Name=Pavuk
 -Name[sk]=Pavúk
@@ -20,4 +20,5 @@ diff -ur pavuk-0.9pl29d.orig/pavuk.desktop pavuk-0.9pl29d/pavuk.desktop
  Terminal=0
 -Type=Internet
 +Type=Application
++Categories=Network;FileTransfer;
 +# vi: encoding=utf-8
