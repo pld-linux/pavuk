@@ -11,6 +11,7 @@ Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://www.idata.sk/~ondrej/sw/%{name}-%{version}.tgz
+# Source0-md5:	933bf6dc0aaf1afbf9d6ac8d557435a9
 Source1:	%{name}.png
 Patch0:		%{name}-fixes.patch
 Patch1:		%{name}-ac.patch
