@@ -22,15 +22,18 @@ Icon:		pavuk.xpm
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	db-devel
+BuildRequires:	db1-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
-BuildRequires:	openssl-devel >= 0.9.7d
+BuildRequires:	openssl-devel >= 0.9.6m
 Obsoletes:	pavuk-ssl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define 	_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 %define		_sysconfdir	/etc/X11/misc
+%define		_desktopdir	%{_applnkdir}/Network/Misc
 
 %description
 Pavuk is UNIX program used to mirror contents of WWW documents or
@@ -64,6 +67,8 @@ HTTP, FTP, Gopher alebo HTTPS (SSL).
 cd src
 %patch3 -p0
 %patch4 -p0
+cd ..
+
 cp %{SOURCE1} .
 
 %build
