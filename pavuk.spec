@@ -62,5 +62,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc *.gz pavukrc.sample pavuk_authinfo.sample Pavuk
 %attr(755,root,root) %{_bindir}/pavuk
 %{_applnkdir}/Network/Misc/*
-%{_datadir}/pixmaps/*
+%{_pixmapsdir}/*
 %{_mandir}/man1/*
