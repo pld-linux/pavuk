@@ -1,7 +1,7 @@
 Summary:	Pavuk WWW Graber
-Summary(pl):	Narzedzie do nieinteraktywnego ¶ci±gania stron WWW
+Summary(pl):	Narzêdzie do nieinteraktywnego ¶ci±gania stron WWW
 Name:		pavuk
-Version:	0.9pl25
+Version:	0.9pl26
 Release:	1
 Serial:		1
 License:	GPL
@@ -37,9 +37,6 @@ cp %{SOURCE1} .
 
 %build
 automake
-
-CFLAGS="-I/usr/include/openssl"; export CFLAGS 
-LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--disable-xt \
 	--enable-ssl \
@@ -53,8 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	desktopdir=%{_applnkdir}/Network/Misc
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	AUTHORS ChangeLog NEWS README TODO
+gzip -9nf AUTHORS ChangeLog NEWS README TODO
 
 %find_lang %{name}
 
