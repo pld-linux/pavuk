@@ -7,7 +7,9 @@ Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
+Group(es):	Red/Utilitarios
 Group(pl):	Sieciowe/Narzêdzia
+Group(pt_BR):	Rede/Utilitários
 Source0:	http://www.idata.sk/~ondrej/sw/%{name}-%{version}.tgz
 Source1:	%{name}.png
 Patch0:		%{name}-fixes.patch
