@@ -1,5 +1,6 @@
 # TODO:
 # - SECURITY: http://securitytracker.com/alerts/2004/Jul/1010789.html
+# - SECURITY: http://securitytracker.com/alerts/2004/Jun/1010613.html
 Summary:	Pavuk WWW Graber
 Summary(cs):	Program pro zrcadlení HTTP, FTP a Gopher serverù
 Summary(fr):	Un programme de mirroring pour HTTP, FTP ou les serveurs Gopher
