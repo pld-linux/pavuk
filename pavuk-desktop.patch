@@ -21,6 +21,6 @@ diff -ur pavuk-0.9pl29d.orig/pavuk.desktop pavuk-0.9pl29d/pavuk.desktop
 -Type=Internet
 +Terminal=false
 +Type=Application
-+Categories=Network;FileTransfer;
++Categories=GTK;Network;FileTransfer;
 +Encoding=UTF-8
 +# vi: encoding=utf-8
