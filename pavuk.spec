@@ -2,7 +2,7 @@ Summary:	Pavuk WWW Graber
 Summary(pl):	Narzedzie do nieinteraktywnego ¶ci±gania stron WWW.
 Name:		pavuk
 Version:	0.9pl23
-Release:	1
+Release:	2
 Serial:		1
 Copyright:	GPL
 Group:		Networking/Utilities
@@ -14,6 +14,7 @@ BuildRequires:	gtk+-devel
 BuildRequires: 	XFree86-devel
 BuildRequires:	gettext-devel
 BuildRequires:	automake
+BuildRequires:	openssl-devel >= 0.9.4-2
 Obsoletes:	pavuk-ssl
 BuildRoot:	/tmp/%{name}-%{version}-root
 
@@ -35,10 +36,11 @@ Mo¿e pracowaæ z protoko³ami HTTP, FTP i Gopher.
 
 %build
 automake
+CFLAGS="-I/usr/include/openssl"; export CFLAGS 
 LDFLAGS="-s"; export LDFLAGS
 %configure \
 	--disable-xt \
-	--disable-ssl \
+	--enable-ssl \
 	--disable-socks \
 	--disable-maintainer-mode
 make
