@@ -20,7 +20,10 @@ WWW graber used to mirror files located on HTTP, HTTPS, FTP, Gopher servers.
 %setup
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%{prefix} --disable-maintainer-mode
+CFLAGS="$RPM_OPT_FLAGS" \
+./configure %{_target}
+	--prefix=%{prefix} \
+	--disable-maintainer-mode
 make
 
 %install
