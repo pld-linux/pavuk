@@ -6,6 +6,7 @@ Release:	1
 Serial:		1
 Copyright:	GPL
 Group:		Networking/Utilities
+Group(pl):      Sieciowe/Narzêdzia
 Source:		ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
 Patch:		pavuk-DESTDIR.patch
 URL:		http://www.idata.sk/~ondrej/pavuk/
@@ -15,7 +16,8 @@ BuildPrereq:	gettext
 BuildPrereq:	automake
 BuildRoot:	/tmp/%{name}-%{version}-root
 
-%define _prefix /usr/X11R6
+%define 	_prefix		/usr/X11R6
+%define		_sysconfdir	/etc/X11/misc
 
 %description
 Pavuk is UNIX program used to mirror contents of WWW documents or files. It
