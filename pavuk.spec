@@ -6,9 +6,9 @@ Release:	1
 Serial:		1
 License:	GPL
 Group:		Networking/Utilities
-Group(pl):      Sieciowe/Narzêdzia
-Source:		ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
-Patch:		pavuk-DESTDIR.patch
+Group(pl):	Sieciowe/Narzêdzia
+Source0:	ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
+Patch0:		pavuk-DESTDIR.patch
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	gtk+-devel
 BuildRequires:	gettext-devel
@@ -22,18 +22,19 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		_sysconfdir	/etc/X11/misc
 
 %description
-Pavuk is UNIX program used to mirror contents of WWW documents or files. It
-transfers documents from HTTP, FTP and Gopher servers.
+Pavuk is UNIX program used to mirror contents of WWW documents or
+files. It transfers documents from HTTP, FTP and Gopher servers.
 
 %description -l pl
-Pavuk (Paj±k) jest programem do robienia odbiæ lustrzanych (mirror) stron
-WWW. Mo¿e pracowaæ z protoko³ami HTTP, FTP i Gopher.
+Pavuk (Paj±k) jest programem do robienia odbiæ lustrzanych (mirror)
+stron WWW. Mo¿e pracowaæ z protoko³ami HTTP, FTP i Gopher.
 
 %prep
 %setup -q
 %patch -p1
 
 %build
+gettext --copy --force
 automake
 CFLAGS="-I/usr/include/openssl"; export CFLAGS 
 LDFLAGS="-s"; export LDFLAGS
