@@ -8,7 +8,9 @@ Group:		Networking/Utilities
 Source:		ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildPrereq:	gtk+-devel
-BuildPrereq: XFree86-devel
+BuildPrereq: 	XFree86-devel
+BuildPrereq:	gettext
+BuildPrereq:	autoconf >= 2.13-8
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -24,6 +26,8 @@ CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
 ./configure %{_target} \
 	--prefix=/usr/X11R6 \
 	--disable-xt \
+	--disable-ssl \
+	--disable-socks \
 	--disable-maintainer-mode
 make
 
@@ -38,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz pavukrc.sample pavuk_authinfo.sample
+%doc *.gz pavukrc.sample pavuk_authinfo.sample Pavuk
 %attr(755,root,root) /usr/X11R6/bin/pavuk
 %lang(sk) /usr/X11R6/share/locale/sk/LC_MESSAGES/pavuk.mo
 %lang(de) /usr/X11R6/share/locale/de/LC_MESSAGES/pavuk.mo
