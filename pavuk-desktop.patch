@@ -1,0 +1,22 @@
+diff -ur pavuk-0.9pl29d.orig/pavuk.desktop pavuk-0.9pl29d/pavuk.desktop
+--- pavuk-0.9pl29d.orig/pavuk.desktop	Sat Nov  2 22:30:28 2002
++++ pavuk-0.9pl29d/pavuk.desktop	Sat Nov  2 23:55:58 2002
+@@ -1,11 +1,14 @@
+ [Desktop Entry]
+ Name=Pavuk
+-Name[sk]=Pavúk
+-Name[cs]=Pavúk
++Name[cs]=PavÃºk
++Name[sk]=PavÃºk
+ Comment=Recursive World Wide Web mirroring tool for HTTP, HTTPS, FTP and Gopher protocols
+-Comment[sk]=Nástroj na rekurzívne kopírovanie dokumentov z WWW cez protokoly HTTP, HTTPS, FTP, FTPS a Gopher
+-Comment[cs]=Nástroj na rekurzivní kopírování dokumentù z WWW pomocí protokolù HTTP, HTTPS, FTP, FTPS a Gopher
++Comment[sk]=NÃ¡stroj na rekurzÃ­vne kopÃ­rovanie dokumentov z WWW cez protokoly HTTP, HTTPS, FTP, FTPS a Gopher
++Comment[cs]=NÃ¡stroj na rekurzivnÃ­ kopÃ­rovánÃ­ dokumentÅ¯ z WWW pomocÃ­ protokolÅ¯ HTTP, HTTPS, FTP, FTPS a Gopher
++Comment[pl]=Program do rekurencyjnego kopiowania stron WWW wspierajÄ…cy protokoÅ‚y HTTP, HTTPS, FTP, FTPS i Gopher
++Comment[sk]=NÃ¡stroj na rekurzÃ­vne kopÃ­rovanie dokumentov z WWW cez protokoly HTTP, HTTPS, FTP, FTPS a Gopher
+ Exec=pavuk -X
+ Icon=pavuk.png
+ Terminal=0
+ Type=Internet
++# vi: encoding=utf-8
