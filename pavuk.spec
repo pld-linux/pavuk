@@ -40,7 +40,7 @@ make prefix=$RPM_BUILD_ROOT%{_prefix} install
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	AUTHORS ChangeLog NEWS README TODO THANK_TO
 
-%finf_lang pavuk
+%find_lang pavuk
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f pavuk.lang
 %defattr(644,root,root,755)
 %doc *.gz pavukrc.sample pavuk_authinfo.sample Pavuk
-%attr(755,root,root) %{_bindir}/bin/pavuk
+%attr(755,root,root) %{_bindir}/pavuk
 %{_mandir}/man1/*
 
 %changelog
