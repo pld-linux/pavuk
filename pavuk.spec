@@ -16,7 +16,7 @@ BuildRequires:	gettext-devel
 BuildRequires:	automake
 BuildRequires:	openssl-devel >= 0.9.4-2
 Obsoletes:	pavuk-ssl
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define 	_prefix		/usr/X11R6
 %define		_mandir		%{_prefix}/man
