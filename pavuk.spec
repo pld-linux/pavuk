@@ -6,7 +6,7 @@ Summary(pl):	Narzêdzie do nieinteraktywnego ¶ci±gania stron WWW
 Summary(sk):	Program na zrkadlenie HTTP, FTP a Gopher serverov
 Name:		pavuk
 Version:	0.9pl29d
-Release:	3
+Release:	4
 Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
@@ -20,7 +20,7 @@ Icon:		pavuk.xpm
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	automake
 BuildRequires:	autoconf
-BuildRequires:	db1-devel
+BuildRequires:	db-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	libtool
@@ -62,9 +62,8 @@ HTTP, FTP, Gopher alebo HTTPS (SSL).
 cp %{SOURCE1} .
 
 %build
-rm -f missing
+# don't run gettextize, pavuk has its own po install system using automake
 %{__libtoolize}
-%{__gettextize}
 %{__aclocal}
 %{__autoconf}
 %{__automake}
@@ -77,13 +76,11 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	desktopdir=%{_applnkdir}/Network/Misc
+	desktopdir=%{_desktopdir}
 
-cp -af pavukrc.sample pavuk_authinfo.sample $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %find_lang %{name}
 
 %clean
@@ -91,9 +88,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog NEWS README TODO
+%doc AUTHORS ChangeLog NEWS README TODO pavukrc.sample pavuk_authinfo.sample
 %attr(755,root,root) %{_bindir}/pavuk
-%{_applnkdir}/Network/Misc/*
-%{_examplesdir}/%{name}-%{version}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
 %{_mandir}/man?/*
