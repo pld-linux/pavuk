@@ -1,7 +1,7 @@
 diff -ur pavuk-0.9pl29d.orig/pavuk.desktop pavuk-0.9pl29d/pavuk.desktop
 --- pavuk-0.9pl29d.orig/pavuk.desktop	Sat Nov  2 22:30:28 2002
 +++ pavuk-0.9pl29d/pavuk.desktop	Sat Nov  2 23:55:58 2002
-@@ -1,11 +1,15 @@
+@@ -1,11 +1,16 @@
  [Desktop Entry]
  Name=Pavuk
 -Name[sk]=Pav�k
@@ -17,8 +17,10 @@ diff -ur pavuk-0.9pl29d.orig/pavuk.desktop pavuk-0.9pl29d/pavuk.desktop
 +Comment[sk]=Nástroj na rekurzívne kopírovanie dokumentov z WWW cez protokoly HTTP, HTTPS, FTP, FTPS a Gopher
  Exec=pavuk -X
  Icon=pavuk.png
- Terminal=0
+-Terminal=0
 -Type=Internet
++Terminal=false
 +Type=Application
 +Categories=Network;FileTransfer;
++Encoding=UTF-8
 +# vi: encoding=utf-8
