@@ -1,7 +1,7 @@
 Summary:	Pavuk WWW Graber
 Summary(pl):	Narzedzie do nieinteraktywnego ¶ci±gania stron WWW.
 Name:		pavuk
-Version:	0.9pl18
+Version:	0.9pl21
 Release:	1
 Serial:		1
 Copyright:	GPL
