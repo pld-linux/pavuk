@@ -39,10 +39,10 @@ stron WWW. Mo¿e pracowaæ z protoko³ami HTTP, FTP i Gopher.
 cp %{SOURCE1} .
 
 %build
-rm missing
+rm -f missing
 %{__libtoolize}
 %{__gettextize}
-aclocal
+%{__aclocal}
 %{__autoconf}
 %{__automake}
 %configure \
