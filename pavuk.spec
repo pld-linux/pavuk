@@ -48,12 +48,12 @@ make DESTDIR=$RPM_BUILD_ROOT install
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	AUTHORS ChangeLog NEWS README TODO THANK_TO
 
-%find_lang pavuk
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -f pavuk.lang
+%files -f %{name}.lang
 %defattr(644,root,root,755)
 %doc *.gz pavukrc.sample pavuk_authinfo.sample Pavuk
 %attr(755,root,root) %{_bindir}/pavuk
