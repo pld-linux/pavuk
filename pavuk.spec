@@ -1,7 +1,7 @@
 Summary:	Pavuk WWW Graber
 Summary(pl):	Narzedzie do nieinteraktywnego ¶ci±gania stron WWW.
 Name:		pavuk
-Version:	0.9pl21
+Version:	0.9pl22
 Release:	1
 Serial:		1
 Copyright:	GPL
@@ -46,7 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 make DESTDIR=$RPM_BUILD_ROOT install
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	AUTHORS ChangeLog NEWS README TODO THANK_TO
+	AUTHORS ChangeLog NEWS README TODO
 
 %find_lang %{name}
 
