@@ -17,6 +17,7 @@ BuildRequires:	automake
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define 	_prefix		/usr/X11R6
+%define		_mandir		%{_prefix}/man
 %define		_sysconfdir	/etc/X11/misc
 
 %description
