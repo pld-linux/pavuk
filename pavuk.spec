@@ -1,7 +1,7 @@
 Summary:	Pavuk WWW Graber
 Summary(pl):	Narzedzie do nieinteraktywnego ¶ci±gania stron WWW.
 Name:		pavuk
-Version:	0.9pl22
+Version:	0.9pl23
 Release:	1
 Serial:		1
 Copyright:	GPL
@@ -14,6 +14,7 @@ BuildRequires:	gtk+-devel
 BuildRequires: 	XFree86-devel
 BuildRequires:	gettext-devel
 BuildRequires:	automake
+Obsoletes:	pavuk-ssl
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define 	_prefix		/usr/X11R6
