@@ -1,20 +1,12 @@
-diff -urN pavuk-0.9pl27.org/Makefile.am pavuk-0.9pl27/Makefile.am
---- pavuk-0.9pl27.org/Makefile.am	Fri May 11 19:17:31 2001
-+++ pavuk-0.9pl27/Makefile.am	Fri May 11 19:17:41 2001
-@@ -30,22 +30,12 @@
- 	button_icons/old/restart.xpm \
- 	button_icons/old/stop.xpm
- 
+--- pavuk-0.9pl29d/Makefile.am.orig	Tue Sep 18 23:08:14 2001
++++ pavuk-0.9pl29d/Makefile.am	Tue Feb 12 11:56:19 2002
+@@ -48,18 +48,8 @@
+ 	BZIP2=-9 tar -cjf pavuk-$(VERSION).tar.bz2 pavuk-$(VERSION);\
+ 	rm -rf pavuk-$(VERSION)
+  
 +desktopdir=$(GNOME_PREFIX)/share/gnome/apps/Internet
 +desktop_DATA= pavuk.desktop
-+
-+pixmapsdir=$(GNOME_PREFIX)/share/pixmaps
-+pixmaps_DATA=pavuk.png
- dist_head:
- 	list="src"; for subdir in $$list; do \
- 		(cd $$subdir && $(MAKE) $@); \
- 	done
-- 
+ 
 -install-data-local:
 -	if test -n "$(DESTDIR)$(GNOME_PREFIX)"; then \
 -		$(mkinstalldirs) $(DESTDIR)$(GNOME_PREFIX)/share/gnome/apps/Internet; \
@@ -29,6 +21,8 @@ diff -urN pavuk-0.9pl27.org/Makefile.am pavuk-0.9pl27/Makefile.am
 -		rm -f  $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps/pavuk_64x64.xpm; \
 -	fi
 -
++pixmapsdir=$(GNOME_PREFIX)/share/pixmaps
++pixmaps_DATA=pavuk.png
 diff -urN pavuk-0.9pl27.org/pavuk.desktop pavuk-0.9pl27/pavuk.desktop
 --- pavuk-0.9pl27.org/pavuk.desktop	Fri May 11 19:17:31 2001
 +++ pavuk-0.9pl27/pavuk.desktop	Fri May 11 19:17:58 2001
