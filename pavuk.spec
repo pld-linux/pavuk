@@ -1,20 +1,24 @@
 Summary:	Pavuk WWW Graber
 Summary(pl):	Narzêdzie do nieinteraktywnego ¶ci±gania stron WWW
 Name:		pavuk
-Version:	0.9pl26
+Version:	0.9pl27
 Release:	1
-Serial:		1
+Epoch:		1
 License:	GPL
 Group:		Networking/Utilities
+Group(de):	Netzwerkwesen/Werkzeuge
 Group(pl):	Sieciowe/Narzêdzia
-Source0:	ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
-Source1:	pavuk.png
-Patch0:		pavuk-fixes.patch
+Source0:	http://www.idata.sk/~ondrej/sw/%{name}-%{version}.tgz
+Source1:	%{name}.png
+Patch0:		%{name}-fixes.patch
 Icon:		pavuk.xpm
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	automake
+BuildRequires:	autoconf
+BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel
-BuildRequires:	openssl-devel >= 0.9.4-2
+BuildRequires:	openssl-devel >= 0.9.6a
+BuildRequires:	db1-devel
 Obsoletes:	pavuk-ssl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -36,10 +40,14 @@ stron WWW. Mo¿e pracowaæ z protoko³ami HTTP, FTP i Gopher.
 cp %{SOURCE1} .
 
 %build
-automake
+rm missing
+gettextize --copy --force
+aclocal
+autoconf
+automake -a -c
 %configure \
-	--disable-xt \
 	--enable-ssl \
+	--enable-threads \
 	--disable-socks \
 	--disable-maintainer-mode
 %{__make}
@@ -63,4 +71,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/pavuk
 %{_applnkdir}/Network/Misc/*
 %{_pixmapsdir}/*
-%{_mandir}/man1/*
+%{_mandir}/man?/*
