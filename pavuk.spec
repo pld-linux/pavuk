@@ -12,7 +12,7 @@ Patch:		pavuk-DESTDIR.patch
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	gtk+-devel
 BuildRequires: 	XFree86-devel
-BuildRequires:	gettext
+BuildRequires:	gettext-devel
 BuildRequires:	automake
 BuildRoot:	/tmp/%{name}-%{version}-root
 
