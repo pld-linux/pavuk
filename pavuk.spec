@@ -7,6 +7,8 @@ Copyright:	GPL
 Group:		Networking/Utilities
 Source:		ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
 URL:		http://www.idata.sk/~ondrej/pavuk/
+BuildPrereq:	gtk+-devel
+BuildPrereq: XFree86-devel
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %description
