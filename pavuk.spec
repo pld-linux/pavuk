@@ -15,10 +15,11 @@ Icon:		pavuk.xpm
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	db1-devel
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+-devel
+BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 0.9.6a
-BuildRequires:	db1-devel
 Obsoletes:	pavuk-ssl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,6 +42,7 @@ cp %{SOURCE1} .
 
 %build
 rm missing
+libtoolize --copy --force
 gettextize --copy --force
 aclocal
 autoconf
