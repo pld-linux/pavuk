@@ -1,6 +1,6 @@
-diff -Nru pavuk-0.9pl26/Makefile.am pavuk-0.9pl26.new/Makefile.am
---- pavuk-0.9pl26/Makefile.am	Thu Jul 13 23:27:26 2000
-+++ pavuk-0.9pl26.new/Makefile.am	Tue Oct 17 01:04:11 2000
+diff -urN pavuk-0.9pl27.org/Makefile.am pavuk-0.9pl27/Makefile.am
+--- pavuk-0.9pl27.org/Makefile.am	Fri May 11 19:17:31 2001
++++ pavuk-0.9pl27/Makefile.am	Fri May 11 19:17:41 2001
 @@ -30,22 +30,12 @@
  	button_icons/old/restart.xpm \
  	button_icons/old/stop.xpm
@@ -29,17 +29,12 @@ diff -Nru pavuk-0.9pl26/Makefile.am pavuk-0.9pl26.new/Makefile.am
 -		rm -f  $(DESTDIR)$(GNOME_PREFIX)/share/pixmaps/pavuk_64x64.xpm; \
 -	fi
 -
-diff -Nru pavuk-0.9pl26/pavuk.desktop pavuk-0.9pl26.new/pavuk.desktop
---- pavuk-0.9pl26/pavuk.desktop	Thu Jul 13 23:31:22 2000
-+++ pavuk-0.9pl26.new/pavuk.desktop	Tue Oct 17 01:20:04 2000
-@@ -1,9 +1,11 @@
- [Desktop Entry]
- Name=Pavuk
-+Name[pl]=Paj±k
- Name[sk]=Pavúk
- Comment=Recursive World Wide Web mirroring tool for HTTP, HTTPS, FTP and Gopher protocols
-+Comment[pl]=Narzêdzie do rekursywnego kopiowania zasobów HTTP, HTTPS, FTP i Gopher
+diff -urN pavuk-0.9pl27.org/pavuk.desktop pavuk-0.9pl27/pavuk.desktop
+--- pavuk-0.9pl27.org/pavuk.desktop	Fri May 11 19:17:31 2001
++++ pavuk-0.9pl27/pavuk.desktop	Fri May 11 19:17:58 2001
+@@ -6,6 +6,6 @@
  Comment[sk]=Nástroj na rekurzívne kopírovanie dokumentov z WWW cez protokoly HTTP, HTTPS, FTP, FTPS a Gopher
+ Comment[cs]=Nástroj na rekurzivní kopírování dokumentù z WWW pomocí protokolù HTTP, HTTPS, FTP, FTPS a Gopher
  Exec=pavuk -X
 -Icon=pavuk_64x64.xpm
 +Icon=pavuk.png
