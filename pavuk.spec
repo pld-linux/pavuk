@@ -43,7 +43,7 @@ LDFLAGS="-s"; export LDFLAGS
 	--enable-ssl \
 	--disable-socks \
 	--disable-maintainer-mode
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
