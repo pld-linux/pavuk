@@ -10,10 +10,10 @@ Group(pl):      Sieciowe/Narzêdzia
 Source:		ftp://ftp.idata.sk/pub/unix/www/%{name}-%{version}.tgz
 Patch:		pavuk-DESTDIR.patch
 URL:		http://www.idata.sk/~ondrej/pavuk/
-BuildPrereq:	gtk+-devel
-BuildPrereq: 	XFree86-devel
-BuildPrereq:	gettext
-BuildPrereq:	automake
+BuildRequires:	gtk+-devel
+BuildRequires: 	XFree86-devel
+BuildRequires:	gettext
+BuildRequires:	automake
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define 	_prefix		/usr/X11R6
