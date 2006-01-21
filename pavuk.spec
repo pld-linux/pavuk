@@ -18,7 +18,6 @@ Patch1:		%{name}-ac.patch
 Patch2:		%{name}-desktop.patch
 Patch3:		%{name}-http.patch
 Patch4:		%{name}-digest_auth.c.patch
-Icon:		pavuk.xpm
 URL:		http://www.idata.sk/~ondrej/pavuk/
 BuildRequires:	automake
 BuildRequires:	autoconf
