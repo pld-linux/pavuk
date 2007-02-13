@@ -1,9 +1,9 @@
 Summary:	Pavuk WWW Graber
-Summary(cs.UTF-8):   Program pro zrcadlení HTTP, FTP a Gopher serverů
-Summary(fr.UTF-8):   Un programme de mirroring pour HTTP, FTP ou les serveurs Gopher
-Summary(it.UTF-8):   Un programma di mirroring per server HTTP, FTP e Gopher
-Summary(pl.UTF-8):   Narzędzie do nieinteraktywnego ściągania stron WWW
-Summary(sk.UTF-8):   Program na zrkadlenie HTTP, FTP a Gopher serverov
+Summary(cs.UTF-8):	Program pro zrcadlení HTTP, FTP a Gopher serverů
+Summary(fr.UTF-8):	Un programme de mirroring pour HTTP, FTP ou les serveurs Gopher
+Summary(it.UTF-8):	Un programma di mirroring per server HTTP, FTP e Gopher
+Summary(pl.UTF-8):	Narzędzie do nieinteraktywnego ściągania stron WWW
+Summary(sk.UTF-8):	Program na zrkadlenie HTTP, FTP a Gopher serverov
 Name:		pavuk
 Version:	0.9pl29d
 Release:	7
