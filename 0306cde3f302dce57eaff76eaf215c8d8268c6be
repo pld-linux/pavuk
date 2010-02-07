@@ -1,0 +1,4 @@
+- really new %doc, use %{_examplesdir}
+- added -ac patch (fixed build with autoconf-2.53a)
+- added -desktop patch (pl entry + converted to UTF8)
+- cleaning, translations from RH
