@@ -21,7 +21,7 @@ URL:		http://www.pavuk.org/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	db-devel
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel
 BuildRequires:	libtool
 BuildRequires:	openssl-devel >= 0.9.7d
