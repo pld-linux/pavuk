@@ -59,9 +59,9 @@ HTTP, FTP, Gopher alebo HTTPS (SSL).
 %setup -q
 mv pavuk.desktop pavuk.desktop.latin1
 iconv -flatin1 -tutf8 pavuk.desktop.latin1 > pavuk.desktop
-%patch0 -p1
-%patch2 -p1
-%patch3 -p1
+%patch -P0 -p1
+%patch -P2 -p1
+%patch -P3 -p1
 cp -a %{SOURCE1} .
 
 %build
